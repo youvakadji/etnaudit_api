@@ -66,11 +66,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r back_end/requirements.txt
 
-        - name: Deploy to Heroku
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: |
-          heroku git:remote -a etnauditapi
-          git remote set-url heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/etnauditapi.git
-          git push heroku main
+    - name: Deploy to Heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: |
+        heroku git:remote -a etnauditapi
+        git remote set-url heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/etnauditapi.git
+        git push heroku main
       
