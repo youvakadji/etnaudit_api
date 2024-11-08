@@ -19,7 +19,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r back_end/requirements.txt
 
       - name: Deploy to Heroku
         env:
